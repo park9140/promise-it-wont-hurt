@@ -1,15 +1,9 @@
-function parsePromised (json) {
-  return  new Promise(function(resolve, reject) {
-      var result;
-      try {
-        result = JSON.parse(json);
-      } catch (e) {
-        reject(e);
-      }
 
-      resolve(result);
-  }
-};
+var invalidJson = process.argv[2];
 
-parsePromised(process.argv[2])
-.then(null, console.log)
+var promise = new Promise(function(resolve, reject) {
+    resolve(invalidJson);
+});
+promise
+    .then(JSON.parse)
+    .then(null, console.log);

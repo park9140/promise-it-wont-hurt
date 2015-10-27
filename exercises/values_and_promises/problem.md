@@ -35,12 +35,15 @@ Construct a promise chain that returns **values** to prove to yourself
 that promise handlers will wrap your returned values in promises
 allowing additional chaining.
 
-1. Construct a promise 
+1. Construct a promise
 2. Construct a function `attachTitle` which prepends `"DR. "` to
    its first argument and returns the result.
 3. Build a promise chain off the promise we constructed initially
    that first calls `attachTitle` then calls `console.log`.
 4. Resolve the promise you created with a value of `"MANHATTAN"`.
+5. Rewrite `attachTitle` to return a promise that resolves after timeout
+   with the result, this will work the same as with just the direct return
+
 
 If your program runs successfully, it should print out "DR. MANHATTAN"
 which is extremely exciting.

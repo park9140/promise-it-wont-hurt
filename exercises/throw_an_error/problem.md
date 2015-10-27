@@ -33,9 +33,6 @@ Let's build exactly the system discussed above.
 
 Some invalid JSON will be available on `process.argv[2]`.
 
-1. Build a function called `parsePromised` that creates a promise,
-   performs `JSON.parse` in a `try`/`catch` block, and resolves or rejects
-   the promise depending on whether an error is thrown.
-   **Note:** your function should synchronously return the promise!
-2. Build a sequence of steps like the ones shown above that catches
-   any thrown errors and logs them to the console.
+1. Build a promise that resolves with process.argv[2],
+2. Run `JSON.parse` in a then on the process,
+3. Log any errors you get
