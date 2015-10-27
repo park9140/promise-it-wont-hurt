@@ -23,8 +23,7 @@ function all (prom1, prom2) {
           ++counter;
           if (counter >=2) resolve([val1, val2]);
         })
-        .then(null, reject)
-        .done();
+        .then(null, reject);
 
         prom2
         .then(function (result) {
@@ -32,11 +31,9 @@ function all (prom1, prom2) {
           ++counter;
           if (counter >=2) resolve([val1, val2]);
         })
-        .then(null, reject)
-        .done();
+        .then(null, reject);
     });
 }
 
 all(prom1, prom2)
-.then(console.log)
-.done();
+.then(console.log);
