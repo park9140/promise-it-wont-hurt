@@ -1,39 +1,42 @@
-var q = require('q')
-  , def1 = q.defer()
-  , def2 = q.defer();
+var prom1 = new Promise(function(resolve) {
+    setTimeout(function () {
+          resolve("PROMISES");
+        }, 200);
+    })
+  , prom2 = new Promise(function(resolve) {
+      setTimeout(function () {
+        resolve("FTW");
+      }, 200);
+    })
 
 function all (prom1, prom2) {
-  var groupDef = q.defer()
-    , counter = 0
-    , val1
-    , val2;
 
-  prom1
-  .then(function (result) {
-    val1 = result;
-    ++counter;
-    if (counter >=2) groupDef.resolve([val1, val2]);
-  })
-  .then(null, groupDef.reject)
-  .done();
+  return new Promise(function(resolve, reject) {
 
-  prom2
-  .then(function (result) {
-    val2 = result;
-    ++counter;
-    if (counter >=2) groupDef.resolve([val1, val2]);
-  })
-  .then(null, groupDef.reject)
-  .done();
+        var counter = 0
+          , val1
+          , val2;
 
-  return groupDef.promise;
+        prom1
+        .then(function (result) {
+          val1 = result;
+          ++counter;
+          if (counter >=2) resolve([val1, val2]);
+        })
+        .then(null, reject)
+        .done();
+
+        prom2
+        .then(function (result) {
+          val2 = result;
+          ++counter;
+          if (counter >=2) resolve([val1, val2]);
+        })
+        .then(null, reject)
+        .done();
+    });
 }
 
-all(def1.promise, def2.promise)
+all(prom1, prom2)
 .then(console.log)
 .done();
-
-setTimeout(function () {
-  def1.resolve("PROMISES");
-  def2.resolve("FTW");
-}, 200);

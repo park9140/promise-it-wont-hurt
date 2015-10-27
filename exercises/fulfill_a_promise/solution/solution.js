@@ -1,5 +1,4 @@
-var q = require('q');
-var def = q.defer();
-
-def.promise.then(console.log);
-setTimeout(def.resolve, 300, "RESOLVED!");
+var promise = new Promise(function(resolve) {
+    setTimeout(resolve, 300, "RESOLVED!");
+}
+promise.then(console.log);

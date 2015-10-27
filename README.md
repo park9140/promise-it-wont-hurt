@@ -31,25 +31,11 @@ You will need to initialize npm in this repo and then use npm to install "q".
 ```
 $ mkdir promise-shop && cd promise-shop
 $ npm init
-$ npm install q
-$ npm install -g promise-it-wont-hurt@latest
+$ npm install https://github.com/park9140/promis-it-wont-hurt/tarball/master
 ```
 
-**Note**: the workshop is being updated weekly. 
+**Note**: the workshop is being updated weekly.
 Please regularly rerun the above command to get the latest set of exercises.
-
-### 2. Docker
-
-```
-alias promise-it-wont-hurt='docker run -it -v $(pwd):/root oreng/promises-workshop'
-
-promise-it-wont-hurt                        # show menu
-promise-it-wont-hurt run mysolution.js      # run your solution
-promise-it-wont-hurt verify mysolution.js   # verify your solution
-```
-
-The workshop stores your progress in .config so `sudo rm -r .config` will
-reset the workshop!
 
 ## Usage Instructions
 
@@ -67,21 +53,21 @@ will build on skills developed by solving previous problems.
 
 #### 2. Writing your solution
 
-Once you have selected a problem, the workshop will remember which problem you are working on. 
+Once you have selected a problem, the workshop will remember which problem you are working on.
 Using your preferred editor, simply create a file to write your solution in.
 
 #### 3. Testing your solution
 
-Use the workshop's `run` command to point the workshop at your solution file. Your solution will loaded 
+Use the workshop's `run` command to point the workshop at your solution file. Your solution will loaded
 and passed the problem input. This usually won't perform any validation, it will only show the program output.
 
 ```
 $ promise-it-wont-hurt run mysolution.js
 ```
- 
+
 #### 4. Verifying your solution
 
-Your solution will be verified against the output of the 'official' solution. 
+Your solution will be verified against the output of the 'official' solution.
 If all of the output matches, then you have successfully solved the problem!
 
 ```
@@ -90,7 +76,7 @@ $ promise-it-wont-hurt verify mysolution.js
 
 ## Stuck?
 
-Feedback and criticism is welcome, please log your troubles in [issues](https://github.com/stevekane/promise-it-wont-hurt/issues). 
+Feedback and criticism is welcome, please log your troubles in [issues](https://github.com/stevekane/promise-it-wont-hurt/issues).
 
 ## Screenshots
 ![Promise it won't hurt](https://raw.github.com/stevekane/promise-it-wont-hurt/master/promiseitwonthurt.png)

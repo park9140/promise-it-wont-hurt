@@ -1,11 +1,22 @@
-var qhttp = require('q-io/http');
+var request = require('request')
 
-qhttp.read("http://localhost:7000/")
+function httpRequest(uri) {
+    return new Promise(function(resolve, reject) {
+        request(uri,
+            function(error, response, body) {
+                if (error) {
+                    reject(response);
+                }
+                resolve(body);
+            });
+    });
+}
+
+httpRequest("http://localhost:7000/")
 .then(function (id) {
-  return qhttp.read("http://localhost:7001/" + id);
+  return httpRequest("http://localhost:7001/" + id);
 })
 .then(function (json) {
   console.log(JSON.parse(json));
 })
-.then(null, console.error)
-.done();
+.then(null, console.error);

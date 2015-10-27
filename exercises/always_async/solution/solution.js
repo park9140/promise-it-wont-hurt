@@ -1,6 +1,5 @@
-var q = require('q')
-  , deferred = q.defer();
-
-deferred.promise.then(console.log);
-deferred.resolve("SECOND");
+var promise = new Promise(function(resolve) {
+    resolve("SECOND");
+});
+promise.then(console.log.bind(console));
 console.log("FIRST");

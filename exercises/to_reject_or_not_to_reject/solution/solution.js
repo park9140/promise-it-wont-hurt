@@ -1,6 +1,6 @@
-var q = require('q')
-  , def = q.defer();
+var promise = new Promise(function(resolve, reject) {
+    resolve("I FIRED");
+    reject("I DID NOT FIRE");
+});
 
-def.promise.then(console.log, console.log);
-def.resolve("I FIRED");
-def.reject("I DID NOT FIRE");
+promise.then(console.log, console.log);

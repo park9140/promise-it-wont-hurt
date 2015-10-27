@@ -1,17 +1,14 @@
-var q = require('q');
-
 function parsePromised (json) {
-  var def = q.defer()
-    , result;
+  return  new Promise(function(resolve, reject) {
+      var result;
+      try {
+        result = JSON.parse(json);
+      } catch (e) {
+        reject(e);
+      }
 
-  try {
-    result = JSON.parse(json);
-  } catch (e) {
-    def.reject(e);
+      resolve(result);
   }
-
-  def.resolve(result);
-  return def.promise;
 };
 
 parsePromised(process.argv[2])

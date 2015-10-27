@@ -16,43 +16,24 @@ the syntax is.  We are about to dive into that in detail.
 
 ## Setup
 
-To do many of the lessons in this workshop, you will need to install
-the `q` module.  To do this, type the following in your project's
-directory:
-
-```sh
-$ npm install q --save
-```
-
-This will install a local copy of the `q` module into your directory
-which you can import into the file you have written using:
-
-```js
-var q = require('q');
-```
+To do many of the lessons in this workshop, you will need to run node 0.12 or higher
+in order to have access to Promise;
 
 ## Task
 
-Use the popular `q` library to create a promise.
+Use the es6 Promise to create a promise.
 
 Pass `console.log` to the `then` method of your promise.
 
 Manually resolve that promise using `setTimeout` with a delay of 300ms
 and pass it a parameter of `"RESOLVED!"`.
 
-In Q, promises are created using `Q.defer()`.
-
-The *deferred* that is created is not exactly the promise, and in order
-to return the actual promise object itself you must return the `promise`
-attribute of the newly created *deferred*.
+In es6, promises are created using 'new Promise(function(resolve, reject){ })'.
 
 ## Boilerplate
 
 ```js
-var q = require('q');
-var defer = q.defer();
-// defer.promise is the actual promise itself
-// defer.promise.then is the "Q" way of attaching a then handler
+var promise = new Promise(function(resolve, reject) {
+});
 
-// your solution here
 ```
