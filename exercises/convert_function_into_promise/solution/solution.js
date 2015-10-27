@@ -1,17 +1,13 @@
-function resultAsPromise(func) {
-  return  function() {
-      return new Promise(function(resolve, reject) {
-          var result;
-          try {
-            result = func.apply(this, arguments);
-          } catch (e) {
-            reject(e);
-          }
+var invalidJson = process.argv[2];
 
-          resolve(result);
-      });
-  };
+function methodAsPromise(func) {
+    return function() {
+        var args = arguments;
+        return new Promise(function(resolve, reject) {
+            resolve(func.apply(this, args));
+        });
+    };
 }
 
-resultAsPromise(JSON.parse).bind(JSON)(process.argv[2])
-    .then(null, console.log);
+methodAsPromise(JSON.parse)(invalidJson)
+    .then(console.log, console.log);

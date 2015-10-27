@@ -27,5 +27,4 @@ Build a method that takes in a function and returns a function that
 when called returns a method that returns the result of the passed
 function as a promise.
 
-**Hint** The method you created in the previous exercise does most
-of what you need to do this task.
+Use this function to run `JSON.parse(process.argv[2])` as a promise;
