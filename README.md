@@ -31,7 +31,7 @@ You will need to initialize npm in this repo and then use npm to install "q".
 ```
 $ mkdir promise-shop && cd promise-shop
 $ npm init
-$ npm install https://github.com/park9140/promis-it-wont-hurt/tarball/master
+$ npm install https://github.com/park9140/promise-it-wont-hurt/tarball/master
 ```
 
 **Note**: the workshop is being updated weekly.
