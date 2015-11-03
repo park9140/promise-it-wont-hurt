@@ -30,6 +30,8 @@ You will need to initialize npm in this repo and then use npm to install "q".
 
 ```
 mkdir promise-shop && cd promise-shop
+nodenv install v4.2.2
+nodenv local v4.2.2
 npm init
 npm install https://github.com/park9140/promise-it-wont-hurt/tarball/master
 ```
