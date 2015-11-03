@@ -29,9 +29,9 @@ Create a new directory to do your workshop work in.  Let's call it "promise-shop
 You will need to initialize npm in this repo and then use npm to install "q".
 
 ```
-$ mkdir promise-shop && cd promise-shop
-$ npm init
-$ npm install https://github.com/park9140/promis-it-wont-hurt/tarball/master
+mkdir promise-shop && cd promise-shop
+npm init
+npm install https://github.com/park9140/promise-it-wont-hurt/tarball/master
 ```
 
 **Note**: the workshop is being updated weekly.
@@ -45,7 +45,7 @@ Once the workshop is installed, run `promise-it-wont-hurt` to print a menu
 where you can select a problem to work on.
 
 ```
-$ promise-it-wont-hurt
+promise-it-wont-hurt
 ```
 
 Problems are listed in rough order of difficulty. You are advised to complete them in order, as later problems
@@ -62,7 +62,7 @@ Use the workshop's `run` command to point the workshop at your solution file. Yo
 and passed the problem input. This usually won't perform any validation, it will only show the program output.
 
 ```
-$ promise-it-wont-hurt run mysolution.js
+promise-it-wont-hurt run mysolution.js
 ```
 
 #### 4. Verifying your solution
@@ -71,7 +71,7 @@ Your solution will be verified against the output of the 'official' solution.
 If all of the output matches, then you have successfully solved the problem!
 
 ```
-$ promise-it-wont-hurt verify mysolution.js
+promise-it-wont-hurt verify mysolution.js
 ```
 
 ## Stuck?
