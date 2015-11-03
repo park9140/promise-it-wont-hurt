@@ -37,10 +37,11 @@ Resolve
 ```js
 var promise = new Promise(function(resolve, reject) {
   //resolve and reject are functions to resolve or reject your promise
+  //pass a parameter to resolve or reject in order pass data to the promise result
 });
 
 promise.then(function(result) {
-  //do something with result
-})
+  console.log(result);
+});
 
 ```
