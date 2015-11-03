@@ -34,6 +34,7 @@ In es6, promises are created using 'new Promise(function(resolve, reject){ })'.
 
 ```js
 var promise = new Promise(function(resolve, reject) {
+  //resolve and reject are functions to resolve or reject your promise
 });
 
 ```
